@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                console.log('DOMContentLoaded');
+                var p = document.querySelector('p');
+                console.log(p);
+            });
+        </script>
+        <link rel="stylesheet" href="./static/style.css?sleep=5000">
+    </head>
+    
+    <body>
+        <p>hello</p>
+    </body>
+</html>
+<!-- 解析DOM生成DOM Tree，解析CSS生成CSSOM Tree，两者结合生成render tree渲染树，最后浏览器根据渲染树渲染至页面。
+    由此可以看出DOM Tree的解析和CSSOM Tree的解析是互不影响的，两者是并行的。
+    因此CSS不会阻塞页面DOM的解析，但是由于render tree的生成是依赖DOM Tree和CSSOM Tree的，因此CSS必然会阻塞DOM的渲染
+ -->

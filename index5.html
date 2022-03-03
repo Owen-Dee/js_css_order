@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            p {
+                color: red;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <p>hello5</p>
+        <script src="./static/index.js?sleep=2000"></script>
+
+        <p>beautiful</p>
+        <style>
+            p {
+                color: black;
+            }
+        </style>
+        <script src="./static/index.js?sleep=6000"></script>
+
+        <p>world</p>
+        <style>
+            p {
+                color: green;
+            }
+        </style>
+    </body>
+</html>
+
+<!-- 浏览器解析DOM时，虽然会一行一行向下解析，但是它会预先加载具有引用标记的外部资源（例如带有src标记的<script>标签），
+    而在解析到此标签时，则无需再去加载，直接运行，以此提高运行效率。所以就会有上述两个输出结果间隔2s的情况，而不是4s，
+    因为浏览器预先就一起加载了两个<script>脚本，第一个<script>脚本加载完成时，第二个<script>脚本还剩大概2s加载完成.
+
+    这才是解释为何CSS会阻塞JS的执行的真正原因，浏览器无法预先知道脚本的具体内容，因此在碰到<script>标签时，
+    只好先渲染一次页面，确保<script>脚本内能获取到DOM的最新的样式。倘若在决定渲染页面时，还有尚未加载完成的CSS样式，
+    只能等待其加载完成再去渲染页面
+ -->

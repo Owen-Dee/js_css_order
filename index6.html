@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                console.log('DOMContentLoaded');
+                var p = document.querySelector('p');
+                console.log(p);
+            });
+        </script>
+        <link rel="stylesheet" href="./static/style.css">
+    </head>
+    
+    <body>
+        <script src="./static/index.js?sleep=4000" async></script>
+        <p id="demo">hello6</p>
+    </body>
+</html>
+<!-- async外链异步的js不会会阻塞dom 文档的解析, 也不会阻塞 DOMContentLoaded事件-->

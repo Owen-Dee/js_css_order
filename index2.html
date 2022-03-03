@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                console.log('DOMContentLoaded');
+                var p = document.querySelector('p');
+                console.log('1: ' + p);
+            });
+        </script>
+    </head>
+    
+    <body>
+        <script>
+            const t1 = Date.now();
+            console.log(`t1: ${t1}`);
+            const p = document.querySelector('p')
+            console.log('2: ' + p)
+            for (var i = 0, arr = []; i < 100000000; i++) {
+                arr.push(i)
+            }
+            const t2 = Date.now();
+            console.log(`t2: ${t2}`);
+            console.log('time: ' + (t2 - t1));
+        </script>
+    
+        <p>hello2</p>
+    </body>
+</html>
+<!-- 内联JS执行初控制台打印null，因为此时p标签还未被解析，for循环执行时，可以明显感觉到执行耗时，
+    执行完成p标签被解析，此时触发DOMContentLoaded事件，控制台打印出p标签，同时页面渲染出hello -->

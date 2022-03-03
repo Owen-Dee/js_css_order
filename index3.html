@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                console.log('DOMContentLoaded');
+                var p = document.querySelector('p');
+                console.log(p);
+            });
+        </script>
+    </head>
+    
+    <body>
+        <script src="./static/index.js?sleep=4000"></script>
+        <p>hello3</p>
+    </body>
+</html>
+<!-- 外链同步的js会阻塞dom 文档的解析 -->

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                console.log('DOMContentLoaded');
+                var p = document.querySelector('p');
+                console.log(p);
+            });
+        </script>
+        <link rel="stylesheet" href="./static/style.css">
+    </head>
+    <body>
+        <script src="./static/index.js?sleep=4000" defer></script>
+        <p id="demo">hello7</p>
+    </body>
+</html>
+<!-- defer外链异步的js不会会阻塞dom 文档的解析, 但会阻塞 DOMContentLoaded事件,
+    只有等defer对应的脚本下载完执行后,才会触发DOMContentLoaded事件-->

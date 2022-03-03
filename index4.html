@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                console.log('DOMContentLoaded');
+                var p = document.querySelector('p');
+                console.log(p);
+            });
+        </script>
+        <link rel="stylesheet" href="./static/style.css?sleep=3000">
+        <script src="./static/index.js"></script>
+    </head>
+    
+    <body>
+        <p id="demo">hello4</p>
+    </body>
+</html>
+<!-- JS脚本中的内容是获取DOM元素的CSS样式属性，如果JS想要获取到DOM最新的正确的样式，
+    势必需要所有的CSS加载完成，否则获取的样式可能是错误或者不是最新的。
+    因此要等到JS脚本前面的CSS加载完成，JS才能再执行，并且不管JS脚本中是否获取DOM元素的样式，浏览器都要这样做
+-->
